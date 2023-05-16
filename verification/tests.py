@@ -8,7 +8,7 @@ if not hasattr(Car, "wheels"):
     raise NotImplementedError("Where is 'wheels' attribute of 'Car' class?")
 
 if Car.wheels != 4:
-    raise NotImplementedError("'wheels' attribute should be equal 4")
+    raise ValueError("'wheels' attribute should be equal 4")
 
 if not "my_second_car" in USER_GLOBAL:
     raise NotImplementedError("Where is 'my_second_car'?")
@@ -16,19 +16,19 @@ if not "my_second_car" in USER_GLOBAL:
 my_second_car = USER_GLOBAL['my_second_car']
 
 if not isinstance(my_second_car, Car):
-    raise Warning("'my_second_car' should be an instance of 'Car' class")
+    raise TypeError("'my_second_car' should be an instance of 'Car' class")
 
 if not hasattr(my_second_car, "brand"):
     raise NotImplementedError("Where is 'brand' attribute of 'my_second_car' object?")
     
 if not isinstance(my_second_car.brand, str):
-    raise NotImplementedError("'brand' attribute should be of type 'str'")
+    raise TypeError("'brand' attribute should be of type 'str'")
 
 if not hasattr(my_second_car, "model"):
     raise NotImplementedError("Where is 'model' attribute of 'my_second_car' object?")
 
 if not isinstance(my_second_car.model, str):
-    raise NotImplementedError("'model' attribute should be of type 'str'")
+    raise TypeError("'model' attribute should be of type 'str'")
 """
 
 run_test = """
