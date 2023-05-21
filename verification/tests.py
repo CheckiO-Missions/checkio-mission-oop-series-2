@@ -7,17 +7,14 @@ Car = USER_GLOBAL['Car']
 if not hasattr(Car, "wheels"):
     raise NotImplementedError("Where is 'wheels' attribute of 'Car' class?")
 
-if Car.wheels != "four":
-    raise ValueError("'wheels' attribute should be equal 'four' for now")
-
 if not hasattr(Car, "doors"):
     raise NotImplementedError("Where is 'doors' attribute of 'Car' class?")
 
 if Car.doors != 4:
     raise ValueError("'doors' attribute should be equal 4")
-
+    
 if Car.wheels != 4:
-    raise ValueError("'wheels' attribute should be changed to 4 outside the class")
+    raise ValueError("'wheels' attribute should be set to 'four' and changed to 4 outside the class")
 
 if not "my_car" in USER_GLOBAL:
     raise NotImplementedError("Where is 'my_car'?")
