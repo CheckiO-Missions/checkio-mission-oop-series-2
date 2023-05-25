@@ -1,31 +1,16 @@
 init_code = """
 if not "Car" in USER_GLOBAL:
-    raise NotImplementedError("Where is 'Car'?")
+    raise NotImplementedError("Where is 'Car' class?")
 
 Car = USER_GLOBAL['Car']
 
-if not hasattr(Car, "wheels"):
-    raise NotImplementedError("Where is 'wheels' attribute of 'Car' class?")
-
-if not hasattr(Car, "doors"):
-    raise NotImplementedError("Where is 'doors' attribute of 'Car' class?")
-
-if Car.doors != 4:
-    raise ValueError("'doors' attribute should be equal 4")
-    
-if Car.wheels != 4:
-    raise ValueError("'wheels' attribute should be set to 'four' and changed to 4 outside the class")
-
 if not "my_car" in USER_GLOBAL:
-    raise NotImplementedError("Where is 'my_car'?")
+    raise NotImplementedError("Dude, where is 'my_car'?")
 
 my_car = USER_GLOBAL['my_car']
 
 if not isinstance(my_car, Car):
-    raise TypeError("my_car should be an instance of Car class")
-
-if my_car.doors != 2:
-    raise ValueError("Don't you want a coupe?")
+    raise TypeError("'my_car' should be an instance of 'Car' class")
 """
 
 run_test = """
@@ -45,7 +30,11 @@ def prepare_test(test="", answer=None, middle_code="", show_code=None):
             "answer": answer}
 
 TESTS = {
-    "First": [
+    "Basics": [
         prepare_test(middle_code='''''',
-                     test="",
-                     answer="")]}
+                     test="Car.wheels",
+                     answer="four"),
+        prepare_test(middle_code='''''',
+                     test="Car.doors",
+                     answer=4)],
+    }
