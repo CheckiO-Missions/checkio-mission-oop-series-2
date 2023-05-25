@@ -11,6 +11,19 @@ my_car = USER_GLOBAL['my_car']
 
 if not isinstance(my_car, Car):
     raise TypeError("'my_car' should be an instance of 'Car' class")
+
+
+if not hasattr(Car, "wheels"):
+    raise AttributeError("Where is 'wheels' attribute of 'Car' class?")
+
+if not hasattr(Car, "doors"):
+    raise AttributeError("Where is 'doors' attribute of 'Car' class?")
+
+if Car.wheels != "four":
+    raise ValueError("'wheels' attribute should be equal 'four'")
+    
+if Car.doors != 4:
+    raise ValueError("'doors' attribute should be equal 4")
 """
 
 run_test = """
