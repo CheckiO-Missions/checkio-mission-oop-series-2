@@ -47,7 +47,4 @@ TESTS = {
         prepare_test(middle_code='''''',
                      test="",
                      answer=""),
-        prepare_test(middle_code='''''',
-                     test="",
-                     answer="")],
     }
